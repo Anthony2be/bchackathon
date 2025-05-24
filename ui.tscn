@@ -47,14 +47,41 @@ alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 
+[node name="Spacer" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "                                            "
+
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "Master Volume"
+horizontal_alignment = 1
 
 [node name="VolumeSlider" parent="VBoxContainer/HBoxContainer2/VBoxContainer" instance=ExtResource("2_m6e0p")]
 layout_mode = 2
 max_value = 1.0
 step = 0.01
 bus_name = "Master"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Background Music"
+horizontal_alignment = 1
+
+[node name="VolumeSlider2" parent="VBoxContainer/HBoxContainer2/VBoxContainer" instance=ExtResource("2_m6e0p")]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+bus_name = "Background"
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Sound Effects"
+horizontal_alignment = 1
+
+[node name="VolumeSlider3" parent="VBoxContainer/HBoxContainer2/VBoxContainer" instance=ExtResource("2_m6e0p")]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+bus_name = "SFX"
 
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/Jump Sound Button" to="." method="_on_check_button_toggled"]
