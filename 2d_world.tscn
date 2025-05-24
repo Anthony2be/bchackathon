@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://dvtwjsgiie1fb"]
+[gd_scene load_steps=11 format=4 uid="uid://dvtwjsgiie1fb"]
 
 [ext_resource type="Script" uid="uid://d2cjo8p8rx5ql" path="res://2d_world.gd" id="1_rly2y"]
 [ext_resource type="PackedScene" uid="uid://bnc0ibhd3dgvr" path="res://Player.tscn" id="1_wwh0i"]
 [ext_resource type="Texture2D" uid="uid://qfkrwnoms54p" path="res://Assets/tilesheet_complete.png" id="2_3ojht"]
 [ext_resource type="PackedScene" uid="uid://psfsyx5gd4mj" path="res://ui.tscn" id="3_mvhgf"]
+[ext_resource type="AudioStream" uid="uid://dymhvfl7x3d45" path="res://Sounds/background1.mp3" id="5_1pa2p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvhgf"]
 texture = ExtResource("2_3ojht")
@@ -67,8 +68,6 @@ texture_region_size = Vector2i(64, 64)
 19:2/0 = 0
 20:2/0 = 0
 21:2/0 = 0
-0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 1:3/0 = 0
 1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 2:3/0 = 0
@@ -98,8 +97,6 @@ texture_region_size = Vector2i(64, 64)
 19:3/0 = 0
 20:3/0 = 0
 21:3/0 = 0
-0:4/0 = 0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 1:4/0 = 0
 1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32)
 2:4/0 = 0
@@ -124,8 +121,6 @@ texture_region_size = Vector2i(64, 64)
 18:4/0 = 0
 19:4/0 = 0
 21:4/0 = 0
-0:5/0 = 0
-0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 1:5/0 = 0
 1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 2:5/0 = 0
@@ -151,8 +146,6 @@ texture_region_size = Vector2i(64, 64)
 19:5/0 = 0
 20:5/0 = 0
 21:5/0 = 0
-0:6/0 = 0
-0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 1:6/0 = 0
 1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 2:6/0 = 0
@@ -182,8 +175,6 @@ texture_region_size = Vector2i(64, 64)
 19:6/0 = 0
 20:6/0 = 0
 21:6/0 = 0
-0:7/0 = 0
-0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 1:7/0 = 0
 1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32)
 2:7/0 = 0
@@ -209,8 +200,6 @@ texture_region_size = Vector2i(64, 64)
 19:7/0 = 0
 20:7/0 = 0
 21:7/0 = 0
-0:8/0 = 0
-0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 1:8/0 = 0
 1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 2:8/0 = 0
@@ -236,8 +225,6 @@ texture_region_size = Vector2i(64, 64)
 19:8/0 = 0
 20:8/0 = 0
 21:8/0 = 0
-0:9/0 = 0
-0:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 1:9/0 = 0
 1:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 2:9/0 = 0
@@ -267,8 +254,6 @@ texture_region_size = Vector2i(64, 64)
 19:9/0 = 0
 20:9/0 = 0
 21:9/0 = 0
-0:10/0 = 0
-0:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 1:10/0 = 0
 1:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32)
 2:10/0 = 0
@@ -294,8 +279,6 @@ texture_region_size = Vector2i(64, 64)
 19:10/0 = 0
 20:10/0 = 0
 21:10/0 = 0
-0:11/0 = 0
-0:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 1:11/0 = 0
 1:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 2:11/0 = 0
@@ -323,12 +306,6 @@ texture_region_size = Vector2i(64, 64)
 21:11/0 = 0
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 1:2/0 = 0
@@ -349,6 +326,30 @@ texture_region_size = Vector2i(64, 64)
 5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 6:2/0 = 0
 6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:0/0 = 0
+0:0/0/z_index = -10
+0:1/0 = 0
+0:1/0/z_index = -10
+0:2/0 = 0
+0:2/0/z_index = -10
+0:3/0 = 0
+0:3/0/z_index = -10
+0:4/0 = 0
+0:4/0/z_index = -10
+0:5/0 = 0
+0:5/0/z_index = -10
+0:6/0 = 0
+0:6/0/z_index = -10
+0:7/0 = 0
+0:7/0/z_index = -10
+0:8/0 = 0
+0:8/0/z_index = -10
+0:9/0 = 0
+0:9/0/z_index = -10
+0:10/0 = 0
+0:10/0/z_index = -10
+0:11/0 = 0
+0:11/0/z_index = -10
 
 [sub_resource type="TileSet" id="TileSet_rly2y"]
 tile_size = Vector2i(64, 64)
@@ -359,6 +360,10 @@ sources/0 = SubResource("TileSetAtlasSource_mvhgf")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvhgf"]
 size = Vector2(1745, 202)
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_ng5gq"]
+stream_count = 1
+stream_0 = ExtResource("5_1pa2p")
 
 [node name="Gobal" type="Node"]
 script = ExtResource("1_rly2y")
@@ -380,7 +385,7 @@ position_smoothing_enabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Level1"]
 position = Vector2(2, 0)
-tile_map_data = PackedByteArray("AAADAAAAAAAFAAIAAAAEAAAAAAAFAAIAAAAFAAAAAAAFAAIAAAAGAAAAAAAFAAIAAAAHAAAAAAABAAIAAAAHAP//AAABAAEAAAAIAP7/AAABAAEAAAAJAP3/AAABAAEAAAAKAPz/AAABAAEAAAAIAP//AAABAAIAAAAJAP7/AAABAAIAAAAKAP3/AAABAAIAAAAIAAAAAAAAAAEAAAAJAP//AAAAAAEAAAAKAP7/AAAAAAEAAAALAPv/AAABAAQAAAAMAPr/AAABAAQAAAANAPn/AAABAAcAAAAOAPj/AAABAAcAAAA=")
+tile_map_data = PackedByteArray("AAADAAAAAAAFAAIAAAAEAAAAAAAFAAIAAAAFAAAAAAAFAAIAAAAGAAAAAAAFAAIAAAAHAAAAAAABAAIAAAAHAP//AAABAAEAAAAIAP7/AAABAAEAAAAJAP3/AAABAAEAAAAKAPz/AAABAAEAAAAIAP//AAABAAIAAAAJAP7/AAABAAIAAAAKAP3/AAABAAIAAAAIAAAAAAAAAAEAAAAJAP//AAAAAAEAAAAKAP7/AAAAAAEAAAALAPv/AAABAAQAAAAMAPr/AAABAAQAAAANAPn/AAABAAcAAAAOAPj/AAABAAcAAAAEAP//AAAAAAYAAAAEAP7/AAAAAAYAAAAEAP3/AAAAAAYAAAAEAPz/AAAAAAYAAAAEAPv/AAAAAAYAAAAFAP//AAAAAAYAAAAFAP7/AAAAAAYAAAAFAP3/AAAAAAYAAAAFAPz/AAAAAAYAAAAFAPv/AAAAAAYAAAA=")
 tile_set = SubResource("TileSet_rly2y")
 
 [node name="Floor" type="StaticBody2D" parent="Level1"]
@@ -395,3 +400,7 @@ mesh = SubResource("QuadMesh_3ojht")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Floor"]
 position = Vector2(71, 222)
 shape = SubResource("RectangleShape2D_mvhgf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_ng5gq")
+bus = &"Background"

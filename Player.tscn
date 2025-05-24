@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://bnc0ibhd3dgvr"]
 
 [ext_resource type="Script" uid="uid://xsbnn42c511q" path="res://player.gd" id="1_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://b1opvs215v3w6" path="res://Assets/Still.png" id="2_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://bm0xemuw2p7p6" path="res://Assets/Jump.png" id="3_e80uo"]
-[ext_resource type="Texture2D" uid="uid://c7sow0umay7w5" path="res://Assets/Moving.png" id="4_cxr5p"]
+[ext_resource type="Texture2D" uid="uid://b1opvs215v3w6" path="res://Assets/Player/Still.png" id="2_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://bm0xemuw2p7p6" path="res://Assets/Player/Jump.png" id="3_e80uo"]
+[ext_resource type="Texture2D" uid="uid://c7sow0umay7w5" path="res://Assets/Player/Moving.png" id="4_cxr5p"]
 [ext_resource type="AudioStream" uid="uid://bwdcya4vxggan" path="res://Sounds/wonderhoy 1.mp3" id="5_tdg3f"]
 [ext_resource type="AudioStream" uid="uid://ccrohhqri0s6g" path="res://Sounds/wonderhoy 2.mp3" id="6_dtqjt"]
 
@@ -52,7 +52,7 @@ sprite_frames = SubResource("SpriteFrames_tdg3f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.25, -5.5)
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_kpjcp")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1opvs215v3w6"
-path="res://.godot/imported/Still.png-ef56840b07cd065a4f7a2c3c0277bdd4.ctex"
+uid="uid://4cyhnr0psyqj"
+path="res://.godot/imported/Running.png-8890b34d6c5677ee0ba26f5ea1a8604a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Still.png"
-dest_files=["res://.godot/imported/Still.png-ef56840b07cd065a4f7a2c3c0277bdd4.ctex"]
+source_file="res://Assets/Enemy/Running.png"
+dest_files=["res://.godot/imported/Running.png-8890b34d6c5677ee0ba26f5ea1a8604a.ctex"]
 
 [params]
 

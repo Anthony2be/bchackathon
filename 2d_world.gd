@@ -5,10 +5,13 @@ extends Node
 @onready var ui_cam: Camera2D = $UI/Camera2D2
 @onready var level_1: Node2D = $Level1
 @onready var player: CharacterBody2D = $Player
+@onready var backgroundSound: AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _ready() -> void:
 	ui.hide()
+	backgroundSound.play()
+	
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("UI"):
