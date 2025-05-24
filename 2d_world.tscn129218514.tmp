@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvtwjsgiie1fb"]
+
+[ext_resource type="PackedScene" uid="uid://bnc0ibhd3dgvr" path="res://Player.tscn" id="1_wwh0i"]
+[ext_resource type="Texture2D" uid="uid://doue6r1ucawsc" path="res://Assets/pixil-frame-0.png" id="2_3ojht"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_3ojht"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvhgf"]
+size = Vector2(1745, 202)
+
+[node name="2D World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_wwh0i")]
+jump = 800
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+position = Vector2(352, 467)
+scale = Vector2(20, 20)
+texture = ExtResource("2_3ojht")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Floor"]
+position = Vector2(352, 467)
+scale = Vector2(20, 20)
+polygon = PackedVector2Array(8.95, -29.35, 3.75, -28.55, 2.45, -27.6, -3.55, -24.5, -5.9, -24, -13.7, -16.35, -38, -16, -38, -1, 9.2, -1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(2476, -171)
+scale = Vector2(2, 0.5)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+position = Vector2(70, 223)
+scale = Vector2(1744.75, 202.25)
+mesh = SubResource("QuadMesh_3ojht")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(71, 222)
+shape = SubResource("RectangleShape2D_mvhgf")
