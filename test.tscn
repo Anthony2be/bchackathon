@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://y2fwpj58f6g5"]
+
+[ext_resource type="AudioStream" uid="uid://bwdcya4vxggan" path="res://Assets/youtube_7hKvMBKXG9s_audio.mp3" id="1_37kl0"]
+
+[node name="Test" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_37kl0")
