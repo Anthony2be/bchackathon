@@ -53,6 +53,8 @@ text = "Master Volume"
 
 [node name="VolumeSlider" parent="VBoxContainer/HBoxContainer2/VBoxContainer" instance=ExtResource("2_m6e0p")]
 layout_mode = 2
+max_value = 1.0
+step = 0.01
 bus_name = "Master"
 
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/Jump Sound Button" to="." method="_on_check_button_toggled"]
