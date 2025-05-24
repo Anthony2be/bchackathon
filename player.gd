@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var jump = 500
 @export var jump_count = 2
 
-@onready var audio: AudioStreamPlayer = $"../AudioStreamPlayer"
+@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready():
@@ -23,12 +23,13 @@ func animation_manager():
 		sprite.play("walking")
 	else:
 		sprite.play("default")
+		
+func _process(_delta: float):
+	animation_manager()
 
 func _physics_process(_delta: float):
-	animation_manager()
 	if !is_on_floor():
 		velocity.y = min(velocity.y + grav, 1000)
-		
 		#print(velocity.y)
 	else:
 		jump_count = 2

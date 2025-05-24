@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://dvtwjsgiie1fb"]
+[gd_scene load_steps=9 format=4 uid="uid://dvtwjsgiie1fb"]
 
 [ext_resource type="Script" uid="uid://d2cjo8p8rx5ql" path="res://2d_world.gd" id="1_rly2y"]
 [ext_resource type="PackedScene" uid="uid://bnc0ibhd3dgvr" path="res://Player.tscn" id="1_wwh0i"]
 [ext_resource type="Texture2D" uid="uid://qfkrwnoms54p" path="res://Assets/tilesheet_complete.png" id="2_3ojht"]
 [ext_resource type="PackedScene" uid="uid://psfsyx5gd4mj" path="res://ui.tscn" id="3_mvhgf"]
-[ext_resource type="AudioStream" uid="uid://bwdcya4vxggan" path="res://Sounds/wonderhoy 1.mp3" id="5_ng5gq"]
-[ext_resource type="AudioStream" uid="uid://ccrohhqri0s6g" path="res://Sounds/wonderhoy 2.mp3" id="6_tbiow"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvhgf"]
 texture = ExtResource("2_3ojht")
@@ -362,12 +360,6 @@ sources/0 = SubResource("TileSetAtlasSource_mvhgf")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvhgf"]
 size = Vector2(1745, 202)
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rgofe"]
-random_volume_offset_db = 1.0
-streams_count = 2
-stream_0/stream = ExtResource("5_ng5gq")
-stream_1/stream = ExtResource("6_tbiow")
-
 [node name="Gobal" type="Node"]
 script = ExtResource("1_rly2y")
 
@@ -403,6 +395,3 @@ mesh = SubResource("QuadMesh_3ojht")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Floor"]
 position = Vector2(71, 222)
 shape = SubResource("RectangleShape2D_mvhgf")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamRandomizer_rgofe")
