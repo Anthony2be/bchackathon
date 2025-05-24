@@ -5,11 +5,26 @@ extends CharacterBody2D
 @export var jump = 500
 @export var jump_count = 2
 
-func _physics_process(delta: float):
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+func _ready():
+	sprite.play("default")
+	
+func animation_manager():
+	if !is_on_floor():
+		sprite.play("jump")
+	elif Input.is_action_pressed("Move Left") || Input.is_action_pressed("Move Right"):
+		sprite.play("walking")
+	else:
+		sprite.play("default")
+
+func _physics_process(_delta: float):
+	animation_manager()
 	if !is_on_floor():
 		velocity.y = min(velocity.y + grav, 1000)
-		print(velocity.y)
-	else: 
+		
+		#print(velocity.y)
+	else:
 		jump_count = 2
 		
 	if Input.is_action_just_pressed("Jump") && jump_count > 0:
