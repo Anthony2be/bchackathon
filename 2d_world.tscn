@@ -1,12 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://dvtwjsgiie1fb"]
+[gd_scene load_steps=9 format=4 uid="uid://dvtwjsgiie1fb"]
 
 [ext_resource type="PackedScene" uid="uid://bnc0ibhd3dgvr" path="res://Player.tscn" id="1_wwh0i"]
 [ext_resource type="Texture2D" uid="uid://qfkrwnoms54p" path="res://Assets/tilesheet_complete.png" id="2_3ojht"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_3ojht"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvhgf"]
-size = Vector2(1745, 202)
+[ext_resource type="PackedScene" uid="uid://psfsyx5gd4mj" path="res://ui.tscn" id="3_mvhgf"]
+[ext_resource type="AudioStream" uid="uid://bwdcya4vxggan" path="res://Assets/youtube_7hKvMBKXG9s_audio.mp3" id="4_rly2y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvhgf"]
 texture = ExtResource("2_3ojht")
@@ -358,7 +355,14 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_mvhgf")
 
-[node name="2D World" type="Node2D"]
+[sub_resource type="QuadMesh" id="QuadMesh_3ojht"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvhgf"]
+size = Vector2(1745, 202)
+
+[node name="Gobal" type="Node"]
+
+[node name="UI" parent="." instance=ExtResource("3_mvhgf")]
 
 [node name="Player" parent="." instance=ExtResource("1_wwh0i")]
 jump = 800
@@ -366,20 +370,25 @@ jump = 800
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
 
-[node name="Floor" type="StaticBody2D" parent="."]
+[node name="Level1" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Level1"]
+position = Vector2(2, 0)
+tile_map_data = PackedByteArray("AAADAAAAAAAFAAIAAAAEAAAAAAAFAAIAAAAFAAAAAAAFAAIAAAAGAAAAAAAFAAIAAAAHAAAAAAABAAIAAAAHAP//AAABAAEAAAAIAP7/AAABAAEAAAAJAP3/AAABAAEAAAAKAPz/AAABAAEAAAAIAP//AAABAAIAAAAJAP7/AAABAAIAAAAKAP3/AAABAAIAAAAIAAAAAAAAAAEAAAAJAP//AAAAAAEAAAAKAP7/AAAAAAEAAAALAPv/AAABAAQAAAAMAPr/AAABAAQAAAANAPn/AAABAAcAAAAOAPj/AAABAAcAAAA=")
+tile_set = SubResource("TileSet_rly2y")
+
+[node name="Floor" type="StaticBody2D" parent="Level1"]
 position = Vector2(-43, 38)
 scale = Vector2(0.5, 0.5)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Floor"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Level1/Floor"]
 position = Vector2(70, 223)
 scale = Vector2(1744.75, 202.25)
 mesh = SubResource("QuadMesh_3ojht")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Floor"]
 position = Vector2(71, 222)
 shape = SubResource("RectangleShape2D_mvhgf")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(2, 0)
-tile_map_data = PackedByteArray("AAADAAAAAAAFAAIAAAAEAAAAAAAFAAIAAAAFAAAAAAAFAAIAAAAGAAAAAAAFAAIAAAAHAAAAAAABAAIAAAAHAP//AAABAAEAAAAIAP7/AAABAAEAAAAJAP3/AAABAAEAAAAKAPz/AAABAAEAAAAIAP//AAABAAIAAAAJAP7/AAABAAIAAAAKAP3/AAABAAIAAAAIAAAAAAAAAAEAAAAJAP//AAAAAAEAAAAKAP7/AAAAAAEAAAALAPv/AAABAAQAAAAMAPr/AAABAAQAAAANAPn/AAABAAcAAAAOAPj/AAABAAcAAAA=")
-tile_set = SubResource("TileSet_rly2y")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rly2y")
