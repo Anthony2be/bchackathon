@@ -15,7 +15,7 @@ config/description="Something about ProSekai"
 config/version="0.0.0.1"
 run/main_scene="uid://c2kfkxrg76vrs"
 config/features=PackedStringArray("4.4", "Forward Plus")
-boot_splash/image="uid://chav2yir1pf42"
+boot_splash/image="uid://2vvuupjb6reg"
 config/icon="uid://bowcafi2pkqeu"
 
 [dotnet]
@@ -27,7 +27,8 @@ project/assembly_name="BCHackathon"
 folder_colors={
 "res://Assets/": "pink",
 "res://Sounds/": "pink",
-"res://scenes/": "teal"
+"res://scenes/": "teal",
+"res://scripts/": "green"
 }
 
 [input]
