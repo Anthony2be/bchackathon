@@ -1,10 +1,35 @@
-[gd_scene load_steps=11 format=4 uid="uid://dvtwjsgiie1fb"]
+[gd_scene load_steps=14 format=4 uid="uid://dvtwjsgiie1fb"]
 
 [ext_resource type="Script" uid="uid://d2cjo8p8rx5ql" path="res://2d_world.gd" id="1_rly2y"]
 [ext_resource type="PackedScene" uid="uid://bnc0ibhd3dgvr" path="res://Player.tscn" id="1_wwh0i"]
 [ext_resource type="Texture2D" uid="uid://qfkrwnoms54p" path="res://Assets/tilesheet_complete.png" id="2_3ojht"]
 [ext_resource type="PackedScene" uid="uid://psfsyx5gd4mj" path="res://ui.tscn" id="3_mvhgf"]
 [ext_resource type="AudioStream" uid="uid://dymhvfl7x3d45" path="res://Sounds/background1.mp3" id="5_1pa2p"]
+[ext_resource type="PackedScene" uid="uid://bpsmn2cboh8rn" path="res://Enemy.tscn" id="5_ng5gq"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ng5gq"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_tbiow"]
+vertices = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_rgofe"]
+vertices = PackedVector2Array(2.82031, -20.3203, 3.39062, 32, -32, 32, -32, -32, -9.59375, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -32, -9.59606, -32, 2.82237, -20.3211, 3.38684, 32, -32, 32)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_nm7qr"]
+vertices = PackedVector2Array(32, 32, -2.82031, 32, -2.25781, -21.4531, 7.33594, -32, 32, -32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-2.2579, -21.45, 7.33816, -32, 32, -32, 32, 32, -2.82237, 32)])
+agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvhgf"]
 texture = ExtResource("2_3ojht")
@@ -36,8 +61,8 @@ texture_region_size = Vector2i(64, 64)
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32)
 4:1/0 = 0
 4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, 32, -32, 32)
-5:1/0 = 0
 6:1/0 = 0
+6:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_nm7qr")
 7:1/0 = 0
 8:1/0 = 0
 9:1/0 = 0
@@ -105,8 +130,8 @@ texture_region_size = Vector2i(64, 64)
 3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32)
 4:4/0 = 0
 4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, 32, -32, 32)
-5:4/0 = 0
 6:4/0 = 0
+6:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_nm7qr")
 7:4/0 = 0
 8:4/0 = 0
 9:4/0 = 0
@@ -148,10 +173,13 @@ texture_region_size = Vector2i(64, 64)
 21:5/0 = 0
 1:6/0 = 0
 1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tbiow")
 2:6/0 = 0
 2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tbiow")
 3:6/0 = 0
 3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tbiow")
 4:6/0 = 0
 4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 5:6/0 = 0
@@ -183,8 +211,8 @@ texture_region_size = Vector2i(64, 64)
 3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32)
 4:7/0 = 0
 4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, 32, -32, 32)
-5:7/0 = 0
 6:7/0 = 0
+6:7/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_nm7qr")
 7:7/0 = 0
 8:7/0 = 0
 9:7/0 = 0
@@ -262,8 +290,8 @@ texture_region_size = Vector2i(64, 64)
 3:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32)
 4:10/0 = 0
 4:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, 32, -32, 32)
-5:10/0 = 0
 6:10/0 = 0
+6:10/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_nm7qr")
 7:10/0 = 0
 8:10/0 = 0
 9:10/0 = 0
@@ -328,38 +356,54 @@ texture_region_size = Vector2i(64, 64)
 6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 0:0/0 = 0
 0:0/0/z_index = -10
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ng5gq")
 0:1/0 = 0
 0:1/0/z_index = -10
+0:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ng5gq")
 0:2/0 = 0
 0:2/0/z_index = -10
+0:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ng5gq")
 0:3/0 = 0
 0:3/0/z_index = -10
+0:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ng5gq")
 0:4/0 = 0
 0:4/0/z_index = -10
+0:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ng5gq")
 0:5/0 = 0
 0:5/0/z_index = -10
+0:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ng5gq")
 0:6/0 = 0
 0:6/0/z_index = -10
+0:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ng5gq")
 0:7/0 = 0
 0:7/0/z_index = -10
+0:7/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ng5gq")
 0:8/0 = 0
 0:8/0/z_index = -10
+0:8/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ng5gq")
 0:9/0 = 0
 0:9/0/z_index = -10
+0:9/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ng5gq")
 0:10/0 = 0
 0:10/0/z_index = -10
+0:10/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ng5gq")
 0:11/0 = 0
 0:11/0/z_index = -10
+0:11/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ng5gq")
+5:1/0 = 0
+5:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_rgofe")
+5:4/0 = 0
+5:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_rgofe")
+5:7/0 = 0
+5:7/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_rgofe")
+5:10/0 = 0
+5:10/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_rgofe")
 
 [sub_resource type="TileSet" id="TileSet_rly2y"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_mvhgf")
-
-[sub_resource type="QuadMesh" id="QuadMesh_3ojht"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvhgf"]
-size = Vector2(1745, 202)
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_ng5gq"]
 stream_count = 1
@@ -376,6 +420,7 @@ enabled = false
 position_smoothing_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_wwh0i")]
+position = Vector2(13, -155)
 jump = 800
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -385,21 +430,43 @@ position_smoothing_enabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Level1"]
 position = Vector2(2, 0)
-tile_map_data = PackedByteArray("AAADAAAAAAAFAAIAAAAEAAAAAAAFAAIAAAAFAAAAAAAFAAIAAAAGAAAAAAAFAAIAAAAHAAAAAAABAAIAAAAHAP//AAABAAEAAAAIAP7/AAABAAEAAAAJAP3/AAABAAEAAAAKAPz/AAABAAEAAAAIAP//AAABAAIAAAAJAP7/AAABAAIAAAAKAP3/AAABAAIAAAAIAAAAAAAAAAEAAAAJAP//AAAAAAEAAAAKAP7/AAAAAAEAAAALAPv/AAABAAQAAAAMAPr/AAABAAQAAAANAPn/AAABAAcAAAAOAPj/AAABAAcAAAAEAP//AAAAAAYAAAAEAP7/AAAAAAYAAAAEAP3/AAAAAAYAAAAEAPz/AAAAAAYAAAAEAPv/AAAAAAYAAAAFAP//AAAAAAYAAAAFAP7/AAAAAAYAAAAFAP3/AAAAAAYAAAAFAPz/AAAAAAYAAAAFAPv/AAAAAAYAAAA=")
+tile_map_data = PackedByteArray("AAAAAP//AAACAAAAAAABAP//AAACAAAAAAACAP//AAACAAAAAAADAP//AAACAAAAAAD/////AAACAAAAAAD+////AAACAAAAAAD9////AAACAAAAAAD8////AAACAAAAAAD7////AAACAAAAAAD6////AAACAAAAAAAEAP//AAADAAAAAAD5////AAABAAAAAAAIAP7/AAABAAAAAAAJAP7/AAACAAAAAAAKAP7/AAACAAAAAAALAP7/AAACAAAAAAAMAP7/AAACAAAAAAANAP7/AAADAAAAAAD5//r/AAAAAAAAAAD5//v/AAAAAAAAAAD5//z/AAAAAAAAAAD5//3/AAAAAAAAAAD6//r/AAAAAAAAAAD6//v/AAAAAAAAAAD6//z/AAAAAAAAAAD6//3/AAAAAAAAAAD7//r/AAAAAAAAAAD7//v/AAAAAAAAAAD7//z/AAAAAAAAAAD7//3/AAAAAAAAAAD8//r/AAAAAAAAAAD8//v/AAAAAAAAAAD8//z/AAAAAAAAAAD8//3/AAAAAAAAAAD9//r/AAAAAAAAAAD9//v/AAAAAAAAAAD9//z/AAAAAAAAAAD9//3/AAAAAAAAAAD+//r/AAAAAAAAAAD+//v/AAAAAAAAAAD+//z/AAAAAAAAAAD+//3/AAAAAAAAAAD///r/AAAAAAAAAAD///v/AAAAAAAAAAD///z/AAAAAAAAAAD///3/AAAAAAAAAAAAAPr/AAAAAAAAAAAAAPv/AAAAAAAAAAAAAPz/AAAAAAAAAAAAAP3/AAAAAAAAAAABAPr/AAAAAAAAAAABAPv/AAAAAAAAAAABAPz/AAAAAAAAAAABAP3/AAAAAAAAAAACAPr/AAAAAAAAAAACAPv/AAAAAAAAAAACAPz/AAAAAAAAAAACAP3/AAAAAAAAAAADAPr/AAAAAAAAAAADAPv/AAAAAAAAAAADAPz/AAAAAAAAAAADAP3/AAAAAAAAAAAEAPr/AAAAAAAAAAAEAPv/AAAAAAAAAAAEAPz/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAPr/AAAAAAAAAAAFAPv/AAAAAAAAAAAFAPz/AAAAAAAAAAAFAP3/AAAAAAAAAAAGAPr/AAAAAAAAAAAGAPv/AAAAAAAAAAAGAPz/AAAAAAAAAAAGAP3/AAAAAAAAAAAHAPr/AAAAAAAAAAAHAPv/AAAAAAAAAAAHAPz/AAAAAAAAAAAHAP3/AAAAAAAAAAAIAPr/AAAAAAAAAAAIAPv/AAAAAAAAAAAIAPz/AAAAAAAAAAAIAP3/AAAAAAAAAAAJAPr/AAAAAAAAAAAJAPv/AAAAAAAAAAAJAPz/AAAAAAAAAAAJAP3/AAAAAAAAAAAKAPr/AAAAAAAAAAAKAPv/AAAAAAAAAAAKAPz/AAAAAAAAAAAKAP3/AAAAAAAAAAALAPr/AAAAAAAAAAALAPv/AAAAAAAAAAALAPz/AAAAAAAAAAALAP3/AAAAAAAAAAAMAPr/AAAAAAAAAAAMAPv/AAAAAAAAAAAMAPz/AAAAAAAAAAAMAP3/AAAAAAAAAAANAPr/AAAAAAAAAAANAPv/AAAAAAAAAAANAPz/AAAAAAAAAAANAP3/AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAD5//7/AAAAAAAAAAD6//7/AAAAAAAAAAD7//7/AAAAAAAAAAD8//7/AAAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_rly2y")
 
-[node name="Floor" type="StaticBody2D" parent="Level1"]
-position = Vector2(-43, 38)
-scale = Vector2(0.5, 0.5)
+[node name="Marker2D" type="Marker2D" parent="Level1"]
+position = Vector2(-426, -122)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Level1/Floor"]
-position = Vector2(70, 223)
-scale = Vector2(1744.75, 202.25)
-mesh = SubResource("QuadMesh_3ojht")
+[node name="Marker2D2" type="Marker2D" parent="Level1"]
+position = Vector2(284, -133)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/Floor"]
-position = Vector2(71, 222)
-shape = SubResource("RectangleShape2D_mvhgf")
+[node name="Controls" type="Control" parent="Level1"]
+z_index = -1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Movement Label" type="Label" parent="Level1/Controls"]
+layout_mode = 0
+offset_left = -124.0
+offset_top = -296.0
+offset_right = 148.0
+offset_bottom = -273.0
+text = "Use A and D to Move Left and Right"
+
+[node name="Jump Label" type="Label" parent="Level1/Controls"]
+layout_mode = 0
+offset_left = 311.0
+offset_top = -301.0
+offset_right = 454.0
+offset_bottom = -252.0
+text = "Use Space to Jump
+"
+
+[node name="RigidBody2D" parent="Level1" node_paths=PackedStringArray("point1", "point2") instance=ExtResource("5_ng5gq")]
+position = Vector2(-279, -171)
+point1 = NodePath("../Marker2D")
+point2 = NodePath("../Marker2D2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPlaylist_ng5gq")

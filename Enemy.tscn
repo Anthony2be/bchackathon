@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpsmn2cboh8rn"]
+
+[ext_resource type="Script" uid="uid://bujji837qa37a" path="res://enemy.gd" id="1_2hac7"]
+[ext_resource type="Texture2D" uid="uid://4cyhnr0psyqj" path="res://Assets/Enemy/Running.png" id="1_s7bn3"]
+[ext_resource type="Texture2D" uid="uid://ukpnbd2u7at" path="res://Assets/Enemy/Standing.png" id="2_2hac7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e6d4v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s7bn3")
+}],
+"loop": true,
+"name": &"Running",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2hac7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qp131"]
+size = Vector2(262, 257)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_2hac7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e6d4v")
+animation = &"Running"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, -0.5)
+shape = SubResource("RectangleShape2D_qp131")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
