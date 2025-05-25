@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/image="uid://2vvuupjb6reg"
 config/icon="uid://bowcafi2pkqeu"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="BCHackathon"
