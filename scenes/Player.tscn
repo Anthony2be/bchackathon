@@ -35,7 +35,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjcp"]
-size = Vector2(246.5, 237)
+size = Vector2(308.333, 296.667)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tdg3f"]
 random_volume_offset_db = 1.0
@@ -51,7 +51,7 @@ script = ExtResource("1_kpjcp")
 sprite_frames = SubResource("SpriteFrames_tdg3f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.25, -5.5)
+position = Vector2(-0.666669, -5.33334)
 scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_kpjcp")
 
