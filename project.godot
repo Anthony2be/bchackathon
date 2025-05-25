@@ -11,13 +11,24 @@ config_version=5
 [application]
 
 config/name="BCHackathon"
-run/main_scene="uid://dvtwjsgiie1fb"
+config/description="Something about ProSekai"
+config/version="0.0.0.1"
+run/main_scene="uid://c2kfkxrg76vrs"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="uid://chav2yir1pf42"
+config/icon="uid://bowcafi2pkqeu"
 
 [dotnet]
 
 project/assembly_name="BCHackathon"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "pink",
+"res://Sounds/": "pink",
+"res://scenes/": "teal"
+}
 
 [input]
 

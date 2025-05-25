@@ -1,3 +1,45 @@
-[gd_resource type="Theme" load_steps=0 format=3 uid="uid://bqxsh3rormpd3"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bqxsh3rormpd3"]
+
+[ext_resource type="FontFile" uid="uid://dp2qerxxdoox5" path="res://Assets/Fonts/Boogaloo-Regular.ttf" id="1_i7eh4"]
+[ext_resource type="FontFile" uid="uid://w3qw17rqfyi" path="res://Assets/Fonts/Owen PERSONAL USE ONLY!.ttf" id="2_78ylj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2q5q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2q5q"]
+bg_color = Color(1, 0.27451, 0.592157, 1)
+border_width_bottom = 20
+border_color = Color(1, 0.172549, 0.568627, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_amlv4"]
+bg_color = Color(1, 0.27451, 0.592157, 1)
+border_width_top = 20
+border_color = Color(1, 0.172549, 0.568627, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="Gradient" id="Gradient_i7eh4"]
+colors = PackedColorArray(0.998935, 0.721003, 0.743625, 1, 0.978483, 0.128398, 0.330996, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_78ylj"]
+gradient = SubResource("Gradient_i7eh4")
+fill = 1
+fill_from = Vector2(0.484127, 0.517196)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aggjg"]
+texture = SubResource("GradientTexture2D_78ylj")
 
 [resource]
+Button/font_sizes/font_size = 56
+Button/fonts/font = ExtResource("1_i7eh4")
+Button/styles/focus = SubResource("StyleBoxEmpty_j2q5q")
+Button/styles/hover = SubResource("StyleBoxFlat_j2q5q")
+Button/styles/normal = SubResource("StyleBoxFlat_j2q5q")
+Button/styles/pressed = SubResource("StyleBoxFlat_amlv4")
+Label/fonts/font = ExtResource("2_78ylj")
+Panel/styles/panel = SubResource("StyleBoxTexture_aggjg")
